@@ -1,0 +1,43 @@
+body {
+
+    padding-left: 10px;
+    background-color: black;
+}
+
+#topNavigation {
+    text-align: center;
+    border-color: cornsilk;
+    background-color: cornsilk;
+    border-style: double;
+    padding: 5px;
+
+}
+
+a {
+    border-style: groove;
+    border-width: 5px;
+    border-color: wheat;
+    background-color: wheat;
+    margin: 15px;
+    color: black;
+
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover,
+a:active {
+    background-color: burlywood;
+    border-color: burlywood;
+}
+
+#page {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1250px;
+
+    background-image: url(images/old_paper_01_by_silver.png);
+}
