@@ -7,11 +7,12 @@
 
     <html lang="en">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
 
 
 </head>
 
-<body>
+<body onload="populatePromt('testing a long str')">
 
     <div id="topNavigation">
         <h4 style="display: inline"> <a class="nav" href="home.html"> Ludus</a></h4>
@@ -23,9 +24,9 @@
         <div id="prompt"></div>
 
         <div id="choices">
-            <p id="choice1" onclick="selectChoice(this.textContent)">Choice 1</p>
-            <p id="choice2" onclick="selectChoice(this.textContent)">Choice 2</p>
+            <p id="choice1" onclick="selectChoice()">Choice 1</p>
+            <p id="choice2" onclick="selectChoice()">Choice 2</p>
         </div>
     </div>
-    <script src="main.js"></script>
+
 </body>
