@@ -38,19 +38,25 @@ a:active {
     background-position: center center;
     background-repeat: no-repeat;
     height: 1250px;
+    color: black;
+
     background-image: url(images/old_paper_01_by_silver.png);
 }
+
 
 #prompt {
     position: relative;
     height: 800px;
+    top: 200px;
+    text-align: center;
 }
 
 #choices {
     position: relative;
 }
 
-#choice1, #choice2 {
+#choice1,
+#choice2 {
     position: relative;
     text-align: center;
     color: black;
@@ -58,7 +64,8 @@ a:active {
     font-size: 30px;
 }
 
-#choice1:hover, #choice2:hover {
+#choice1:hover,
+#choice2:hover {
     transform: translate(0, -5px);
     cursor: pointer;
 }
