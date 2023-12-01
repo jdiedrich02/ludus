@@ -14,7 +14,7 @@ function selectChoice(choice) {
     //keeps getting undefined errors, but the page behaves as expected.
     populatePromt(prompts[choice].txt);
 
-    //very sketchy way to 
+    //very sketchy way to have an n amount of choices
     for (let i = 0; i < prompts[choice].choices.length; i++) {
         document.getElementById(`choice${i + 1}`).innerHTML = `<p id="choice${choice}" onclick="selectChoice(${prompts[choice]["" + choice + i].nextId})">${prompts[choice]["" + choice + i].txt}</p>`;
     }
