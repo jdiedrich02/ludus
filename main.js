@@ -4,8 +4,10 @@ let prompts = [{ txt: "This is the first prompt", choices: [{ nextId: 1, txt: "C
 function main() {
     populatePromt(prompts[0].txt);
 
-    document.getElementById("choice1").innerHTML = `<p id="choice1" onclick="selectChoice(${prompts[0].choices[0].nextId})">${prompts[0].choices[0].txt}</p>`;
-    document.getElementById("choice2").innerHTML = `<p id="choice2" onclick="selectChoice(${prompts[0].choices[1].nextId})">${prompts[0].choices[1].txt}</p>`;
+    // Add the first prompt choices
+    let choice = document.createElement('p');
+    choice.innerHTML = `<p class="choicesPrompt" onclick="selectChoice(${prompts[0].choices[0].nextId})">${prompts[0].choices[0].txt}</p>`;
+    document.getElementById('choices').appendChild(choice);
 }
 
 //currently if you click the prompts too quickly, the displaying txt breaks
@@ -13,10 +15,13 @@ function selectChoice(choice) {
 
     //keeps getting undefined errors, but the page behaves as expected.
     populatePromt(prompts[choice].txt);
+    document.getElementById('choices').innerHTML = "";
 
     //very sketchy way to have an n amount of choices
     for (let i = 0; i < prompts[choice].choices.length; i++) {
-        document.getElementById(`choice${i + 1}`).innerHTML = `<p id="choice${choice}" onclick="selectChoice(${prompts[choice]["" + choice + i].nextId})">${prompts[choice]["" + choice + i].txt}</p>`;
+        let choiceText = document.createElement('p');
+        choiceText.innerHTML = `<p class="choicesPrompt" onclick="selectChoice(${prompts[choice].choices[i].nextId})">${prompts[choice].choices[i].txt}</p>`;
+        document.getElementById('choices').appendChild(choiceText);
     }
 
 }
