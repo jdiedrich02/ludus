@@ -12,7 +12,7 @@
 
 </head>
 
-<body onload="populatePromt('testing a long str')">
+<body onload="main()">
 
     <div id="topNavigation">
         <h4 style="display: inline"> <a class="nav" href="home.html"> Ludus</a></h4>
@@ -21,11 +21,11 @@
     <hr>
 
     <div id="page">
-        <div id="prompt"></div>
+        <div id="prompt">
+            <p id="promptTxt"></p>
+        </div>
 
         <div id="choices">
-            <p id="choice1" onclick="selectChoice()">Choice 1</p>
-            <p id="choice2" onclick="selectChoice()">Choice 2</p>
         </div>
     </div>
 

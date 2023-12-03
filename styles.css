@@ -49,14 +49,14 @@ a:active {
     height: 800px;
     top: 200px;
     text-align: center;
+    font-size: 20px;
 }
 
 #choices {
     position: relative;
 }
 
-#choice1,
-#choice2 {
+.choicesPrompt {
     position: relative;
     text-align: center;
     color: black;
@@ -64,8 +64,7 @@ a:active {
     font-size: 30px;
 }
 
-#choice1:hover,
-#choice2:hover {
+.choicesPrompt:hover {
     transform: translate(0, -5px);
     cursor: pointer;
 }
