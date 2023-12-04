@@ -13,11 +13,10 @@ function main() {
 //currently if you click the prompts too quickly, the displaying txt breaks
 function selectChoice(choice) {
 
-    //keeps getting undefined errors, but the page behaves as expected.
     populatePromt(prompts[choice].txt);
     document.getElementById('choices').innerHTML = "";
 
-    //very sketchy way to have an n amount of choices
+    // Way to have an n amount of choices
     for (let i = 0; i < prompts[choice].choices.length; i++) {
         let choiceText = document.createElement('p');
         choiceText.innerHTML = `<p class="choicesPrompt" onclick="selectChoice(${prompts[choice].choices[i].nextId})">${prompts[choice].choices[i].txt}</p>`;
@@ -31,16 +30,16 @@ function populatePromt(txt) {
     let p = document.getElementById("promptTxt");
     p.innerText = "";
 
-    let intervalId = setInterval(function () {
-
-        p.innerText += " " + txt.split(" ")[0];
-
-        txt = txt.slice(txt.split(" ")[0].length + 1);
-
-        if (txt.length == 0) {
-            clearInterval(intervalId);
-        }
-
-    }, 500);
+    let index = 0;
+    let resultStr = '';
+    const interval = setInterval(function() {
+      if (index < txt.length) {
+        resultStr += txt[index];
+        p.innerText = resultStr;
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
 
 }
