@@ -40,6 +40,8 @@ a:active {
     height: 1250px;
     color: black;
 
+    padding: 5%;
+
     background-image: url(images/old_paper_01_by_silver.png);
 }
 
