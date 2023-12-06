@@ -84,9 +84,9 @@ function complexPrompt(choice) {
     let won = (Math.floor(Math.random() * 11) < 4);
 
     if (won) {
-      resultId = 5;
+      resultId = 7;
     } else {
-      resultId = 6;
+      resultId = 8;
     }
 
     // -2 is conservative playtsyle.
@@ -96,9 +96,9 @@ function complexPrompt(choice) {
     let won = (Math.floor(Math.random() * 11) < 7);
 
     if (won) {
-      resultId = 7;
+      resultId = 9;
     } else {
-      resultId = 8;
+      resultId = 10;
     }
 
   }
