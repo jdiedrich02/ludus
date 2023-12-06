@@ -14,13 +14,11 @@ body {
 }
 
 .nav {
-    border-style: groove;
-    border-width: 5px;
-    border-color: wheat;
-    background-color: wheat;
     margin: 15px;
-    color: black;
+}
 
+a {
+    font-family: 'Roman';
 }
 
 a:visited {
@@ -37,21 +35,29 @@ a:active {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 1250px;
+    height: 600px;
+    width: 500px;
     color: black;
-
+    justify-content: center;
+    align-items: center;
     padding: 10%;
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -400px;
     background-image: url(images/old_paper_01_by_silver.png);
 }
 
 
 #prompt {
     position: relative;
-    height: 800px;
-    top: 200px;
+    height: 200px;
+    top: 20px;
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Roman';
+    max-width: 600px;
 }
 
 #choices {
@@ -63,10 +69,17 @@ a:active {
     text-align: center;
     color: black;
     transition: transform ease 300ms;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Roman';
 }
 
 .choicesPrompt:hover {
     transform: translate(0, -5px);
     cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Roman';
+    src: url('fonts/Parix-Hybrid111R.otf') format('opentype');
 }
