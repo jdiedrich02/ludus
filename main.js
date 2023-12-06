@@ -1,5 +1,9 @@
 // prompts: [{txt, choices [{nextId, txt}] }]
 
+//Used to stop glitchy txt if cliking next choice too fast
+var typingToScreen = false;
+var txtSkip = false;
+
 function main() {
   populatePromt(prompts[0].txt);
 
@@ -8,8 +12,12 @@ function main() {
 
 }
 
-//currently if you click the prompts too quickly, the displaying txt breaks
+
 function selectChoice(choice) {
+
+  if (typingToScreen) {
+    txtSkip = true;
+  }
 
   // A negative choice means a more complex decision about the next prompt must be made.
   if (choice < 0) {
@@ -38,15 +46,25 @@ function populatePromt(txt) {
 
   let index = 0;
   let resultStr = '';
+
+  typingToScreen = true;
+
   const interval = setInterval(function () {
+
+    if (txtSkip) {
+      txtSkip = false;
+      clearInterval(interval);
+    }
+
     if (index < txt.length) {
       resultStr += txt[index];
       p.innerText = resultStr;
       index++;
     } else {
+      typingToScreen = false;
       clearInterval(interval);
     }
-  }, 1); // changed from 100 to 1 for testing
+  }, 100); // changed from 100 to 1 for testing
 
 }
 
