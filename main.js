@@ -88,7 +88,7 @@ function populatePromt(txt) {
       typingToScreen = false;
       clearInterval(interval);
     }
-  }, 100); // changed from 100 to 1 for testing
+  }, 25); // changed from 100 to 1 for testing
 
 }
 
