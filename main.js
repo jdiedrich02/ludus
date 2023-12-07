@@ -4,6 +4,8 @@
 var typingToScreen = false;
 var txtSkip = false;
 
+var ending;
+
 function main() {
   populatePromt(prompts[0].txt);
 
@@ -28,6 +30,28 @@ function selectChoice(choice) {
 
     populatePromt(prompts[choice].txt);
     document.getElementById('choices').innerHTML = "";
+
+    // Remembering players choice, decides the ending
+    switch (choice) {
+      case 34:
+        ending = 47;
+        break;
+      case 35:
+        ending = 48;
+        break;
+      case 38:
+        ending = 49;
+        break;
+      case 39:
+        ending = 50;
+        break;
+      case 44:
+        ending = 51;
+        break;
+      case 45:
+        ending = 52;
+        break;
+    }
 
     // Way to have an n amount of choices
     for (let i = 0; i < prompts[choice].choices.length; i++) {
@@ -68,7 +92,7 @@ function populatePromt(txt) {
 
 }
 
-//For now only deals with deciding win/loss of Ludus game.
+//Deals with deciding win/loss of Ludus game & endings
 function complexPrompt(choice) {
 
   document.getElementById('choices').innerHTML = "";
@@ -84,9 +108,9 @@ function complexPrompt(choice) {
     let won = (Math.floor(Math.random() * 11) < 4);
 
     if (won) {
-      resultId = 7;
-    } else {
       resultId = 8;
+    } else {
+      resultId = 9;
     }
 
     // -2 is conservative playtsyle.
@@ -96,11 +120,14 @@ function complexPrompt(choice) {
     let won = (Math.floor(Math.random() * 11) < 7);
 
     if (won) {
-      resultId = 9;
-    } else {
       resultId = 10;
+    } else {
+      resultId = 11;
     }
 
+    // Deals with the endings
+  } else if (choice == -3) {
+    resultId = ending;
   }
 
   populatePromt(prompts[resultId].txt);
