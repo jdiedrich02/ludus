@@ -33,22 +33,22 @@ function selectChoice(choice) {
 
     // Remembering players choice, decides the ending
     switch (choice) {
-      case 34:
-        ending = 47;
-        break;
       case 35:
         ending = 48;
         break;
-      case 38:
+      case 36:
         ending = 49;
         break;
       case 39:
         ending = 50;
         break;
-      case 44:
+      case 40:
         ending = 51;
         break;
       case 45:
+        ending = 53;
+        break;
+      case 46:
         ending = 52;
         break;
     }
